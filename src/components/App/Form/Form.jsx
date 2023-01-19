@@ -25,14 +25,6 @@ function Form(){
                 zip: zip,
                 type: type,
                 total: 12.35,
-                pizzas: [{
-                    "id": "1",
-                    "quantity": "1"
-                  },{
-                    "id": "2",
-                    "quantity": "1"
-                  }]
-                
             }
         }).then((response) => {
 

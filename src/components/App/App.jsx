@@ -13,23 +13,24 @@ function App() {
   return (
       <div className='App'>
         {/* <Header /> */}
+        <Router>
         <header className='App-header'>
                 <h1 className='App-title'>Prime Pizza</h1>
                 <ul>
                   <li>
-                    <Link to='/'>Menu</Link>
+                    <Link to='/Menu'>Menu</Link>
                   </li>
                   <li>
-                    <Link to='/form'><Form></Form></Link>
+                    <Link to='/form'><Form>Form</Form></Link>
                   </li>
                   <li>
-                    <Link to='/Checkout'>Menu</Link>
+                    <Link to='/Checkout'>Checkout</Link>
                   </li>
                 </ul>
             </header>
-        <Router>
+        
 
-          <Route exact path='/'>
+          <Route exact path='/Menu'>
             <Menu />
           </Route>
 
@@ -37,7 +38,7 @@ function App() {
             <Form />
           </Route>
 
-          <Route exact path='/checkout'>
+          <Route exact path='/Checkout'>
             <Checkout />
           </Route>
 

@@ -24,7 +24,7 @@ function Menu() {
 
     return (
         <section>
-            <h2>Pizza List</h2>
+            <h1>Pizza List</h1>
             <ul>
                 {pizzaList.map((pizza) => {
                     return <li key={pizza.id}></li> 
