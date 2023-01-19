@@ -3,6 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 
+<<<<<<< HEAD
+// const reduxStore = createStore(
+//     combineReducers({
+//       pizzaList
+//     }),
+//     applyMiddleware(logger)
+//   );
+
+ReactDOM.render(<App />, document.getElementById('root'));
+=======
 
 /** TODO: import REDUX **/
 import {  createStore, combineReducers, applyMiddleware } from 'redux';
@@ -47,3 +57,4 @@ ReactDOM.render(
 
 
 
+>>>>>>> main
