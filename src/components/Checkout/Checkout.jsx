@@ -7,11 +7,13 @@ import { useSelector, useDispatch } from 'react-redux';
   // Using the useSelector hook to get the current state
   // of the cart reducer from our Redux store:
   const pizzaCart = useSelector((store) => store.pizzaCart)
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     axios({
       method: "GET",
-      url: "/api/order/${order.id}",
+      url: `/api/order/${order.id}`,
     })
       .then((response) => {
         // We got the data, we even verified it was working
