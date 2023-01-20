@@ -6,7 +6,7 @@ import './App.css';
 import Menu from './Menu/Menu';
 import Form from './Form/Form';
 import Checkout from '../Checkout/Checkout.jsx';
-
+import Admin from '../Admin/Admin.jsx';
 
 function App() {
 
@@ -18,17 +18,20 @@ function App() {
                 <h1 className='App-title'>Prime Pizza</h1>
                 <ul>
                   <li>
-                    <Link to='/Menu'>Menu</Link>
+                    <Link to='/menu'>Menu</Link>
                   </li>
                   <li>
                     <Link to='/form'>Form</Link>
                   </li>
                   <li>
-                    <Link to='/Checkout'>Checkout</Link>
+                    <Link to='/checkout'>Checkout</Link>
+                  </li>
+                  <li>
+                    <Link to='/admin'>Admin</Link>
                   </li>
                 </ul>
             </header>
-          <Route exact path='/Menu'>
+          <Route exact path='/'>
             <Menu />
           </Route>
 
@@ -36,8 +39,12 @@ function App() {
             <Form />
           </Route>
 
-          <Route exact path='/Checkout'>
+          <Route exact path='/checkout'>
             <Checkout />
+          </Route>
+
+          <Route exact path='/admin'>
+            <Admin />
           </Route>
 
         </Router>
