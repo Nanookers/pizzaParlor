@@ -12,6 +12,7 @@ function App() {
 
   return (
       <div className='App'>
+        <Router>
         {/* <Header /> */}
         <header className='App-header'>
                 <h1 className='App-title'>Prime Pizza</h1>
@@ -20,14 +21,14 @@ function App() {
                     <Link to='/'>Menu</Link>
                   </li>
                   <li>
-                    <Link to='/form'><Form></Form></Link>
+                    <Link to='/form'>Form</Link>
                   </li>
                   <li>
-                    <Link to='/Checkout'>Menu</Link>
+                    <Link to='/Checkout'>Checkout</Link>
                   </li>
                 </ul>
             </header>
-        <Router>
+        {/* <Router> */}
 
           <Route exact path='/'>
             <Menu />
