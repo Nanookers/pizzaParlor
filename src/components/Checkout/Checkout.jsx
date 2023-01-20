@@ -1,7 +1,7 @@
 // import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import axios from 'axios'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 const Checkout = () => {
@@ -15,6 +15,8 @@ const Checkout = () => {
   // Using the useSelector hook to get the current state
   // of the dogs reducer from our Redux store:
   const pizzaCart = useSelector((store) => store.pizzaCart)
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     axios({
