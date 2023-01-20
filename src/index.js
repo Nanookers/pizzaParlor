@@ -17,10 +17,17 @@ const pizzaList = (state = [], action) => {
     }
 }
 
-const pizzaCart = (state=[{id: 1, order_id: 1, pizza_id: 1}], action ) => {
-    if(action.type === 'SHOW_CART') {
-        console.log('in the CREATE_ORDER if block:', action);
+// const pizzaCart = (state = [], action ) => {
+//     if(action.type === 'FETCH_CART') {
+//         console.log('in the CREATE_ORDER if block:', action);
 
+//     }
+//     return state;
+// }
+
+const orderList = (state= {}, action) => {
+    if(action.type === "FETCH_CART"){
+        return action.payload[0];
     }
     return state;
 }
@@ -40,7 +47,9 @@ const reduxStore = createStore(
     combineReducers({
         pizzaList,
         pizzaCart, 
-        adminOrders
+        adminOrders,    
+        orderList
+
     }),
     applyMiddleware(logger)
 );
