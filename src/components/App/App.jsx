@@ -24,7 +24,7 @@ function App() {
                     <Link to='/form'>Form</Link>
                   </li>
                   <li>
-                    <Link to='/Checkout'>Checkout</Link>
+                    <Link to='/checkout'>Checkout</Link>
                   </li>
                 </ul>
             </header>
@@ -36,7 +36,7 @@ function App() {
             <Form />
           </Route>
 
-          <Route exact path='/Checkout'>
+          <Route exact path='/checkout'>
             <Checkout />
           </Route>
 
