@@ -17,13 +17,13 @@ const pizzaList = (state = [], action) => {
     }
 }
 
-// const pizzaCart = (state = [], action ) => {
-//     if(action.type === 'FETCH_CART') {
-//         console.log('in the CREATE_ORDER if block:', action);
+const pizzaCart = (state = [], action ) => {
+    if(action.type === 'SET_PIZZA_CART') {
+        return action.payload[0];
 
-//     }
-//     return state;
-// }
+    }
+    return state;
+}
 
 const orderList = (state= {}, action) => {
     if(action.type === "FETCH_CART"){

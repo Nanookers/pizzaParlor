@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux"
+import { useSelector } from "react-redux";
 import axios from "axios";
 
 
@@ -10,7 +11,7 @@ function Form(){
     const [zip, setZip] = useState('')
     const [type, setType] = useState('')
 
-    // const dispatch = useDispatch();
+    const pizza = useSelector((store) => store.pizzaCart)
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -25,6 +26,7 @@ function Form(){
                 zip: zip,
                 type: type,
                 total: 12.35,
+                pizzas: pizza
             }
         }).then((response) => {
 

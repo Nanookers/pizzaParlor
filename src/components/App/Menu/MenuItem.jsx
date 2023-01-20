@@ -23,8 +23,11 @@ function MenuItem({ pizza, picture }) {
         })
     }, [])
 
-    const addPizza = (id) => {
-        
+    const addPizza = () => {
+        dispatch({
+            type:'SET_PIZZA_CART',
+            payload: pizza.id
+        })
     }
 
     const deletePizza = (id) => {
@@ -33,9 +36,9 @@ function MenuItem({ pizza, picture }) {
 
     if (showPicture === true) {
         return(
-            <div className="img-card"
-                onClick={toggleShow}>
-                <img src={pizza.image_path} alt={pizza.description} />
+            <div className="img-card">
+                <img src={pizza.image_path} alt={pizza.description} onClick={toggleShow} />
+                <button onClick={addPizza} style={{width: 200}}>AddPizza</button>
             </div>
         )
     }

@@ -20,7 +20,7 @@ function Checkout(){
   const getOrder = () => {
     axios({
       method: "GET",
-      url: `/api/order/`,
+      url: `/api/order`,
     })
       .then((response) => {
         // We got the data, we even verified it was working
@@ -37,6 +37,8 @@ function Checkout(){
         console.error("PizzaList useEffect fail:", err);
       });
   }
+
+  
    // Function to handle the checkout
   const handleCheckout = () => {
     // Dispatch an action to clear the cart and order data from the store
