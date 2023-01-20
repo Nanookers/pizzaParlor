@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux';
 
 
+function Checkout(){
   // Using the useSelector hook to get the current state
   // of the cart reducer from our Redux store:
   const pizzaCart = useSelector((store) => store.pizzaCart)
@@ -86,7 +87,7 @@ import { useSelector, useDispatch } from 'react-redux';
       </div>
     
   );
-    }
+}
 
 export default Checkout;
     
