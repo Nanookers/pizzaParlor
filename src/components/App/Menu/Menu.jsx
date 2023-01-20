@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import axios from 'axios'
+import MenuItem from './MenuItem';
 
 function Menu() {
     
@@ -25,11 +26,18 @@ function Menu() {
     return (
         <section>
             <h1>Pizza List</h1>
-            <ul>
-                {pizzaList.map((pizza) => {
-                    return <li key={pizza.id}></li> 
+            <div>
+                {pizzaList.map((pizza,picture) => {
+                    return (
+                        <MenuItem 
+                        key={pizza.id}
+                        pizza={pizza}
+                        picture={picture}
+                        description = {pizza.description}
+                        />
+                    )
                 })}
-            </ul>
+            </div>
         </section>
     );
 }
