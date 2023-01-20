@@ -6,7 +6,7 @@ import { useState } from 'react';
 function MenuItem({ pizza, picture }) {
 
     const dispatch = useDispatch();
-    const [showPicture, setShowPicture] = useState(true);
+    const [photoStatus, setPhotoStatus] = useState(true);
     const toggleShow = () => setShowPicture(!showPicture)
 
     useEffect(() => {
@@ -31,25 +31,40 @@ function MenuItem({ pizza, picture }) {
 
     }
 
-    if (showPicture === true) {
-        return(
-            <div className="img-card"
-                onClick={toggleShow}>
-                <img src={pizza.image_path} alt={pizza.description} />
-            </div>
-        )
-    }
-        else {
-            return(
-                <p className="img-card"
-                    onClick={toggleShow}>
-                    {pizza.description}
-                </p>
-            )
+    const showDescription = () => {
+        console.log('you selected a pizza');
+        if (photoStatus === true) {
+            setPhotoStatus(false);
+        } else {
+            setPhotoStatus(true);
         }
-    
+    }
+
+return (
+    <>
+            {photoStatus ? (
+                <>
+                    <div className='pizzaName'>
+                        <h4>{pizza.name}</h4>
+                        <h5>{pizza.description}</h5>
+                    </div>
+                    <img src={pizza.image_path}/>
+                        <button onClick={showDescription}>ADD</button>
+                </>
+
+) : (//ternarry switch
+                <>
+                    <div className='pizzaName'>
+                        <h4>{pizza.name}</h4>
+                        <h5>{pizza.description}</h5>
+                    </div>
+                    <img src={pizza.image_path}/>
+                        <button onClick={showDescription}>REMOVE</button>
+                </> 
+            )} 
+            </>  
+)
 
 }
-
 
 export default MenuItem;
