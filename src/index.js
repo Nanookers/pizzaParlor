@@ -46,7 +46,7 @@ const adminOrders = (state = [], action) => {
 const reduxStore = createStore(
     combineReducers({
         pizzaList,
-        pizzaCart, 
+        // pizzaCart, 
         adminOrders,    
         orderList
 
