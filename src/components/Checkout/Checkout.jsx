@@ -1,34 +1,25 @@
 // import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import axios from 'axios'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-
-const Checkout = () => {
-  // Annoying middle step to use dispatch...
-//   const dispatch = useDispatch();
-
-//   function handleCheckout (){
-
-//   }
 
   // Using the useSelector hook to get the current state
-  // of the dogs reducer from our Redux store:
+  // of the cart reducer from our Redux store:
   const pizzaCart = useSelector((store) => store.pizzaCart)
-
+  const dispatch = useDispatch();
   useEffect(() => {
     axios({
       method: "GET",
-      url: "/api/order",
+      url: "/api/order/${order.id}",
     })
       .then((response) => {
         // We got the data, we even verified it was working
         // as expected:
         // console.table(response.data);
-        // Now we need to send the array of book objects to
-        // our bookList reducer:
+        
         dispatch({
-          type: "SHOW_CART",
+          type: "FETCH_CART",
           payload: response.data, // 👈 this is array of book objects!
         });
       })
@@ -36,6 +27,14 @@ const Checkout = () => {
         console.error("PizzaList useEffect fail:", err);
       });
   }, []); // 👈 don't forget the empty array!
+
+   // Function to handle the checkout
+  const handleCheckout = () => {
+    // Dispatch an action to clear the cart and order data from the store
+    dispatch({
+      type: "CHECKOUT",
+    });
+  };
 
   // pizzaCheckout order.id / order_id//
 
@@ -78,11 +77,14 @@ const Checkout = () => {
       </table>
       <div>
         <p>{orders.total}</p>
-        <input type="button" value="Checkout" />
+        </div>
+        <div>
+        <button onClick={handleCheckout}>Checkout</button>
       </div>
-    </div>
+      </div>
+    
   );
-};
+    }
 
 export default Checkout;
     
